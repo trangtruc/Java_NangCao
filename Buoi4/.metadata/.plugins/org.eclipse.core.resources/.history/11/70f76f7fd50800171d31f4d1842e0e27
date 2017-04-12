@@ -1,0 +1,65 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.ArrayList" %>
+<%@page import="servlet.*" %>
+<%
+	Object obj=session.getAttribute("giohang1");
+	if(obj!=null){
+	    Giohang giohang1=(Giohang)obj;
+	    ArrayList<Sanpham> dssp=giohang1.getSPGiohang();
+	    if(dssp.size()>0){
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MyBooks</title>
+</head>
+<body>
+	<table align="center" border="1" width="95%">
+	    <tr>
+	        <th>STT</th>
+	        <th>Tên sách</th>
+	        <th>Tên tác giả</th>
+	        
+	        <th>Đơn giá</th>
+	        <th>Số lượng sách có</th>
+	        <th></th>
+	    </tr>
+	    
+	    <%
+	    int i=1;
+	    
+    	for(Sanpham sp:dssp){
+    	
+    	 String ms=sp.getId();
+    	 String tua=sp.getTitle();
+         String tgia=sp.getAuthor();
+         double dg=sp.getPrice();
+         int qty =sp.getQty();
+         
+        %>
+        
+        <tr>
+        	<td><%=ms%></td>
+            <td><%=tua%></td>
+            <td><%=tgia%></td>
+          
+            <td><%=dg%></td>
+            <td><%=qty%></td>
+        </tr>
+	     <%}%>
+   	</table>
+    <br/>
+        <center>
+            <form method="post" action="Controller">
+                <input type="hidden" name="action" value="checkout"/>
+                <input type="submit" value="Thanh toán"/>
+            </form>
+        </center>
+        
+  <%}
+   }
+%>
+        
+</body>
+</html>

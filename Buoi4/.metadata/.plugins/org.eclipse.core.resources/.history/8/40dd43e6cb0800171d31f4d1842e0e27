@@ -1,0 +1,17 @@
+package servlet;
+import java.sql.*;
+
+public class DbConnection {
+	Connection conn = null;
+	Statement st = null;
+	
+	public DbConnection() throws Exception{
+		Class.forName("com.mysql.jdbc.Driver");
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ebookshop","root","");
+		System.out.println("Ok");
+	}
+	
+	public ArrayList<Sanpham> getSanPhamTitle(String title) throws Exception{
+		
+	}
+}

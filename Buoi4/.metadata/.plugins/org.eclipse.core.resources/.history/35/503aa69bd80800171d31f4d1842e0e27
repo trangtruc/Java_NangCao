@@ -1,0 +1,63 @@
+package servlet;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+
+public class Giohang  implements Serializable{
+ 
+    private ArrayList<Monhang> giohang;
+    private ArrayList<Sanpham> giohang1;
+    
+    public Giohang() {
+        giohang = new ArrayList<Monhang>();
+        giohang1 = new ArrayList<Sanpham>();
+    }
+ 
+   
+    public void ThemMonHang(Monhang mh) {
+        if (giohang.contains(mh)) {
+            Monhang m = giohang.get(giohang.indexOf(mh));
+            m.setSoluong(m.getSoluong() + mh.getSoluong());
+        } else
+            giohang.add(mh);
+        
+    }
+ 
+    public void XoaMonhang(Monhang mh) {
+        if (giohang.contains(mh)) {
+            giohang.remove(mh);
+        }
+    }
+ 
+   
+    public ArrayList<Monhang> getGiohang() {
+        return giohang;
+    }
+    
+    public ArrayList<Sanpham> getSPGiohang() {
+        return giohang1;
+    }
+    
+    public void ThemMonHangSP(ArrayList<Sanpham> sp) {
+        if (giohang1.contains(sp)) {
+            Sanpham s = giohang1.get(giohang1.indexOf(sp));
+        } else
+            giohang1.addAll(sp);
+        
+    }
+ 
+    public void XoaMonhangSP(ArrayList<Sanpham> sp) {
+        if (giohang1.contains(sp)) {
+            giohang1.remove(sp);
+        }
+    }
+    
+    
+    public double Tongtien(){
+        double tt=0d;
+        for(Monhang mh:giohang){
+            tt+=mh.getSanpham().getPrice()*mh.getSoluong();
+        }
+        return tt;
+    }
+}

@@ -1,0 +1,5 @@
+#Tomcat publish data
+#Mon Mar 06 14:49:33 ICT 2017
+org.eclipse.jst.jee.server\:Demo=D\:\\apache-tomcat-9.0.0.M17\\wtpwebapps\\Demo
+org.eclipse.jst.jee.server\:VD=D\:\\apache-tomcat-9.0.0.M17\\wtpwebapps\\VD
+org.eclipse.jst.jee.server\:beer_v1=D\:\\apache-tomcat-9.0.0.M17\\wtpwebapps\\beer_v1

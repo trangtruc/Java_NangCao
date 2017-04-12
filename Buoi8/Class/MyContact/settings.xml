@@ -1,0 +1,18 @@
+<settings>
+  .
+  .
+  <proxies>
+   <proxy>
+      <id>example-proxy</id>
+      <active>true</active>
+      <protocol>http</protocol>
+      <host>cache-st.ctu.edu.vn</host>
+      <port>3128</port>
+      <username>proxyuser</username>
+      <password>somepassword</password>
+      <nonProxyHosts>www.google.com|*.example.com</nonProxyHosts>
+    </proxy>
+  </proxies>
+  .
+  .
+</settings>

@@ -1,0 +1,62 @@
+package servlet;
+import java.sql.*;
+import java.util.ArrayList;
+
+public class DbConnection {
+	private Connection conn = null;
+	private Statement st = null;
+	
+	public DbConnection() throws Exception{
+		Class.forName("com.mysql.jdbc.Driver");
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ebookshop","root","");
+		System.out.println("Ok");
+	}
+	
+	public ArrayList<Sanpham> getSanPhamTitle(String title) throws Exception{
+		ArrayList<Sanpham> ds= new ArrayList<Sanpham>();
+		st = conn.createStatement();
+		String sql = "select * from books where title='"+title+"'";
+		ResultSet rs = st.executeQuery(sql);
+		while(rs.next()){
+			String id = rs.getString("id");
+        	String t = rs.getString("title");
+            String author = rs.getString("author");
+            Float price = rs.getFloat("price");
+            int quantity = rs.getInt("qty");
+            ds.add(new Sanpham(id, t, author, price, quantity));
+		}
+		return ds;
+	}
+	
+	public ArrayList<Sanpham> getSanPhamAuthor(String author) throws Exception{
+		ArrayList<Sanpham> ds= new ArrayList<Sanpham>();
+		st = conn.createStatement();
+		String sql = "select * from books where title='"+author+"'";
+		ResultSet rs = st.executeQuery(sql);
+		while(rs.next()){
+			String id = rs.getString("id");
+        	String t = rs.getString("title");
+            String au = rs.getString("author");
+            Float price = rs.getFloat("price");
+            int quantity = rs.getInt("qty");
+            ds.add(new Sanpham(id, t, au, price, quantity));
+		}
+		return ds;
+	}
+	
+	public ArrayList<Sanpham> getAllSanPham() throws Exception{
+		ArrayList<Sanpham> ds= new ArrayList<Sanpham>();
+		st = conn.createStatement();
+		String sql = "select * from books";
+		ResultSet rs = st.executeQuery(sql);
+		while(rs.next()){
+			String id = rs.getString("id");
+        	String t = rs.getString("title");
+            String author = rs.getString("author");
+            Float price = rs.getFloat("price");
+            int quantity = rs.getInt("qty");
+            ds.add(new Sanpham(id, t, author, price, quantity));
+		}
+		return ds;
+	}
+}

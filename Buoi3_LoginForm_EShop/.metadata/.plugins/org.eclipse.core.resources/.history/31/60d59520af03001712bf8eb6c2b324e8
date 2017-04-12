@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<td></td>
+			<td>
+				<input type="search"/>
+				<input type="submit" value="search">
+			</td>
+		</tr>
+		<tr>
+			<td>ID</td>
+			<td>Title</td>
+			<td>Author</td>
+			<td>Price</td>
+			<td>Quantity</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+				<input type="search"/>
+				<input type="submit" value="search">
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+				<input type="search"/>
+				<input type="submit" value="search">
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+				<input type="search"/>
+				<input type="submit" value="search">
+			</td>
+		</tr>
+		
+	</table>
+</body>
+</html>

@@ -1,0 +1,14 @@
+.navbar-inverse .navbar-toggle:before {
+    color: #ffffff;
+}
+.navbar-toggle:before {
+    color: #16a085;
+    content: "\e00c";
+    font-family: "Flat-UI-Icons";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-transition: color 0.25s linear;
+    transition: color 0.25s linear;
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="MyContact"/>
+<aop-project name="TestMyContact"/>
+<aop-project name="Hello"/>
+<aop-project name="Login"/>
+</aop-reference-model>

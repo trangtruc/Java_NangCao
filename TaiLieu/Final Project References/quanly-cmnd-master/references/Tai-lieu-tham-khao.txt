@@ -1,0 +1,2 @@
+Tài liệu tham khảo:
++ Thư viện Javascript cho phép chụp hình từ webcam: https://github.com/jhuckaby/webcamjs

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;login.jsp, registration.jsp, welcome.jsp&apos; to &apos;templates&apos;" description="Move 3 resources to &apos;templates&apos;" destination="src/main/resources/templates" element1="src/main/webapp/login.jsp" element2="src/main/webapp/registration.jsp" element3="src/main/webapp/welcome.jsp" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="3" stamp="1490519028521" updateReferences="true"/>
+</session>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form method="POST" action="">
+		<input type="text" name="search" placeholder="Title, Author,.." />
+		<button type="submit"><b>Search!</b></button> 
+	</form>
+	<table>
+		<tr>
+			<td>ID</td>
+			<td>Title</td>
+			<td>Author</td>
+			<td>Price</td>
+			<td>Quantity</td>
+		</tr>
+		
+		
+	</table>
+</body>
+</html>

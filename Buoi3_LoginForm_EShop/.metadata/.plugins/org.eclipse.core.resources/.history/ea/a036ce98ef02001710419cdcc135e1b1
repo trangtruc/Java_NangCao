@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Dang Nhap lai</title>
+</head>
+<body>
+	
+	<form method="POST" action="url_login">
+		User: <input type="text" name="user"/>
+		Password: <input type="password" name="pass"/>
+		<input type="submit" value="Yes"/>
+	</form>
+</body>
+</html>

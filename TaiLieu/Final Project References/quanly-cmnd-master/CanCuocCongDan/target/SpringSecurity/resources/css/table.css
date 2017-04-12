@@ -1,0 +1,41 @@
+table[border="1"] {
+  border-collapse:collapse;
+  font:normal normal 11px Verdana,Arial,Sans-Serif;
+  color:#666;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+table[border="1"] tr {
+  background:#fafafa;
+}
+table[border="1"] th,
+table[border="1"] td {
+  vertical-align:center;
+  padding:5px 10px;
+  border:1px solid #fff;
+}
+table[border="1"] tr:nth-child(even) {
+  background:#f5f5f5;
+}
+table[border="1"] th {
+  background:#418AA4;
+  color:#fff;
+  font-weight:bold;
+}
+table[border="1"] th {
+  text-align: center;
+  font-size:12px;
+}
+table[border="1"] td {
+  text-align: center;
+  font-size:12px;
+}
+table[border="1"] .thongtin {
+ 
+}
+table tr:hover {
+    background-color: #D8D8D8;
+}
+table tr:nth-child(even):hover {
+	background-color: #D8D8D8;
+}

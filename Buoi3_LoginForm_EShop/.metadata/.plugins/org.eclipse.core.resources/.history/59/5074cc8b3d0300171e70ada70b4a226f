@@ -1,0 +1,99 @@
+package bai1;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class greeting
+ */
+@WebServlet("/greeting")
+public class greeting extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+    /**
+     * Default constructor. 
+     */
+    public greeting() {
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		String ten = request.getParameter("ten");
+		String tuoi = request.getParameter("tuoi");
+		String gioitinh = request.getParameter("gioitinh");
+		
+		response.setContentType("text/html");
+		
+		PrintWriter out = response.getWriter();
+		
+//		RequestDispatcher re = request.getRequestDispatcher("url_welcome");
+//		re.forward(request, response);
+		
+		
+		
+		 String title = "Xin Chào";
+		    String docType =
+		      "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">\n";
+		    out.println(docType +
+		                "<html>\n" +
+		                "<head>\n" +
+		                "<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">"
+		 +   "<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js\"></script>" +
+		    "<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>" +
+		                "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=\"utf-8\"\">\n"
+		               + "<title>" + title + "</title>\n" +
+		                "</head>\n" +
+		                "<body>\n" +
+		                "<h1 align=\"center\">" + title + "</h1>\n" +
+		                "<div class=\"container\">" +
+		                "<table class=\"table table-bordered\">" +
+		                "<thead>" +
+		                	"<h2>" + "Xin chao" + "</h2>"+
+		                "</thead>" +
+		                "<tbody>" +
+		                	"<form class=\"form-inline\" method=\"get\" action=\"urllogin_form\">" +
+		                	  "<tr>" 
+		                		+ "<td>" + "Name:" + "</td>"
+		                	    + "<td>" + request.getParameter("ten") + "</td>"
+		                	+ "</tr>" + 
+		                	 "<tr>" 
+		                		+ "<td>" + "Age:" + "</td>"
+		                	    + "<td>");
+		    				String a;
+		    				if(tuoi.equals(6)){
+		    					a = "Lop 1";
+		    				}
+		    				out.println("</td>"
+		                	+ "</tr>" + 
+		                	 "<tr>" 
+		                		+ "<td>" + "Greeting" + "</td>"
+		                	    + "<td>" + "Hello " + request.getParameter("gioitinh") + "</td>"
+		                	+ "</tr>"
+		                	+ "</form>"
+		                + "</tbody>"
+		                + "</table>"
+		                + "</div>" +
+		                "</body></html>");
+		
+		
+	}
+}

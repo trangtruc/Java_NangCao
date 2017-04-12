@@ -1,0 +1,52 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.ArrayList" %>
+<%@page import="shopping.*" %>
+<%
+   Object obj=session.getAttribute("giohang");
+   if(obj!=null){
+       Giohang giohang=(Giohang)obj;
+       ArrayList<Monhang>dssp=giohang.getGiohang();
+       if(dssp.size()>0){
+%>
+<table align="center" border="1" width="95%">
+    <tr>
+        <th>STT</th>
+        <th>Tên món hàng</th>
+        <th>Số lượng</th>
+        <th>Đơn giá</th>
+        <th>Thành tiền</th>
+        <th></th>
+    </tr>
+    <%int i=1;
+    for(Monhang mh:dssp){
+        String ms=mh.getSanpham().getMsSP();
+        String ten=mh.getSanpham().getTenSP();
+        double dg=mh.getSanpham().getDongia();
+        int sl=mh.getSoluong();
+        %>
+        <tr>
+            <td><%=(i++)%></td>
+            <td><%=ten%></td>
+            <td><%=dg%></td>
+            <td><%=sl%></td>
+            <td><%=dg*sl%></td>
+            <td>
+                <form action="ControllerServlet" method="post">
+                    <input type="hidden" name="action" value="trahang"/>
+                    <input type="hidden" name="mssp" value="<%=ms%>"/>
+                    <input type="submit" value="Trả hàng"/>
+                </form>
+            </td>
+        </tr>
+    <%}%>
+    </table>
+    <br/>
+        <center>
+            <form action="ControllerServlet">
+                <input type="hidden" name="action" value="checkout"/>
+                <input type="submit" value="Check out"/>
+            </form>
+        </center>
+   <%}
+   }
+%>

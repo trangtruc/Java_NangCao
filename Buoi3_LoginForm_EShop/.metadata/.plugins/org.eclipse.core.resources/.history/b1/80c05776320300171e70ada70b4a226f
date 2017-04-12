@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="container">
+	
+	 	<table class="table table-bordered">
+			<thead>
+				<h2>Thông Tin Người Dùng</h2>
+			</thead>
+			<tbody>
+			<form class="form-inline" method="POST" action="url_greeting">
+				 <tr>
+			        <td>Họ và Tên</td>
+			        <td>
+			        <input type="text" name="ten"/>
+			        </td>
+			      </tr>
+			      <tr>
+			        <td>Giới tính</td>
+			        <td>
+			        <input type="radio" name="gioitinh" value=""/> Nữ 
+			        <input type="radio" name="gioitinh" value=""/> Nam
+			        </td>
+			      </tr>
+			      <tr>
+			        <td>Tuổi</td>
+			        <td>
+			        <input type="number" name="tuoi"/>
+			        </td>
+			      </tr>
+			      <tr>
+			        <td>Quê quán</td>
+			        <td>
+			        <select>
+			        	<option>Cần Thơ</option>
+			        	<option>Vĩnh Long</option>
+			        	<option>Hà Nội</option>
+			        	<option>Trà Vinh</option>
+			        	<option>TP HCM</option>
+			        	<option>Hậu Giang</option>
+			        	<option>Sóc Trăng</option>
+			        	<option>Đà Nẵng</option>
+			        	<option>Nha Trang</option>
+			        </select>
+			        </td>
+			      </tr>
+			      <tr>
+			        <td>Email</td>
+			        <td>
+			        <input type="email" name="email"/>
+			        </td>
+			      </tr>
+			      <tr>
+			        <td>Ngôn ngữ</td>
+			        <td>
+			        <input type="checkbox" name="ngonngu" value=""/> 
+			            Tiếng Việt 
+			        <input type="checkbox" name="ngonngu" value=""/> 
+			            Tiếng Anh
+			        </td>
+			      </tr>
+			      <tr>
+			      <td></td>
+			      <td>
+			        	<input type="submit" value="Yes"/>
+				  </td>
+				  </tr>
+			</form> 
+			</tbody>
+		</table>
+		
+		
+</div>
+</body>
+</html>

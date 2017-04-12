@@ -1,0 +1,74 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.ArrayList" %>
+<%@page import="servlet.*" %>
+<%
+	Object obj=session.getAttribute("giohang");
+	if(obj!=null){
+	    Giohang giohang=(Giohang)obj;
+	    ArrayList<Sanpham> dssp=giohang.getSPGiohang();
+	    if(dssp.size()>0){
+%>
+<br>
+<h2 align="center">Thông tin sách tìm thấy</h2>
+<table align="center" border="1" width="95%">
+    <tr>
+    	<th>Chọn</th>
+        <th>STT</th>
+        <th>Tên sách</th>
+        <th>Tên tác giả</th>
+        <th>Đơn giá</th>
+        <th>Số lượng hiện còn trong kho</th>
+        <th>Số lượng mua</th>
+        <th></th>
+    </tr>
+    
+    <%int i=1;
+    for(Sanpham sp:dssp){
+    	
+    	 String ms=sp.getId();
+    	 String tua=sp.getTitle();
+         String tgia=sp.getAuthor();
+        
+         double dg=sp.getPrice();
+         int qty =sp.getQty();
+         
+        %>
+      
+        <tr>
+        	<td>
+        	<input type="checkbox" name="check" value="<%=sp.getId()%>">
+        	</td>
+            <td><%=ms%></td>
+            <td><%=tua%></td>
+            <td><%=tgia%></td>
+            <td><%=dg%></td>
+            <td><%=qty%></td>
+            <td>
+            	<input type="number" name="soluong" value="0"/>
+            	<%
+            	String n = request.getParameter("soluong"); 
+            	System.out.print("Number: " + n);
+            	%>
+            </td>
+            
+           
+            <td>
+                <form action="Controller" method="post">
+                    <input type="hidden" name="action" value="trahang"/>
+                    <input type="hidden" name="mssp" value="<%=ms%>"/>
+                    <input type="submit" value="Trả hàng"/>
+                </form>
+            </td>
+        </tr>
+    <%}%>
+    </table>
+    <br/>
+        <center>
+            <form method="post" action="Controller">
+                <input type="hidden" name="action" value="checkout"/>
+                <input type="submit" value="Check out"/>
+            </form>
+        </center>
+   <%}
+   }
+%>
